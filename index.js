@@ -59,7 +59,7 @@
 				};
 				pic.style.transform = 'scale('+n+')';
 			},60 );
-		},0 )
+		},500 )
 		pic.onmouseover = function (){
 			this.style.transform = 'scale( 1.1 )';
 		};
