@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS Document */
+/* reset.css */
+body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,form,input,textarea,th,td,em,label{margin:0;padding:0;}
+body,button,input,select,textarea{border:0;font-size:12px;font-family:tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;}
+strong{font-weight:normal;}
+em{font-style:normal;}
+li{list-style:none;}
+a{text-decoration:none;}
+a:hover{text-decoration:underline;}
+img{border:none; vertical-align:top;}
+table{border-collapse:collapse;border-spacing:0;}
+textarea{ resize:none; overflow:auto;}
+input,textarea{outline:none;border:0;}
+/* end reset.css */
+/* public.css */
+.clearFix{zoom:1;}
+.clearFix:after{content:"";display:block;clear:both;}
+.wrap{width:1190px;margin:0 auto;}
+/* end public.css */
