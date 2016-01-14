@@ -21,16 +21,34 @@ input,textarea{outline:none;border:0;}
 /* end public.css */
 
 
-
-
 body{background: url(../img/bg1.jpg) no-repeat;overflow:hidden;}
+.wrap{width:1090px;height:100%;margin: 0 auto;position: relative;}
+.active{text-align: center;overflow: hidden;}
+.header{width:100%;height:120px;}
+.header p{line-height:120px;float: left;width:50%;position:relative;height:120px;text-shadow: 1px 2px #22c3aa,2px 4px #aee2d9;color:white;font-size:20px;}
+.pRight span{position: absolute;left:600px;top: 0;white-space:nowrap;opacity: 0;}
+.pLeft span{position: absolute;left: 0px;top: 0;white-space:nowrap;opacity: 0;}
+.pic{width:220px;height:200px;margin:40px auto 40px;border-radius:50%;overflow: hidden;border:5px solid #aee2d9;transform:scale(0);transition:200ms;position: relative;}
+.pic img{width:220px;height:200px;}
+.pic .img2{position: absolute;left:0;top: 0;opacity: 0;z-index:5}
+p{height:35px;line-height: 35px;}
+.wrapCon{width:100%;height: 100%;position: absolute;left: 0;top:800px;}
+
+
+
+#ul{position: absolute;top: 0;left:50px;}
+#ul li{width: 14px; height: 13px; margin: 7px;position: relative;}
+#ul li a{display: block;width: 14px; height: 13px;background:blue;border-radius:50%;}
+#ul li span{position:absolute;left:0;top:0;display:none;}  
+
+/* body{background: url(../img/bg1.jpg) no-repeat;overflow:hidden;}
 .header{width:100%;height:120px;position: absolute;left:0;top: 0;}
 .header p{line-height:120px;float: left;width:50%;position:relative;height:120px;text-shadow: 1px 2px #22c3aa,2px 4px #aee2d9;color:white;font-size:18px;}
 .pRight span{position: absolute;left:600px;top: 0;white-space:nowrap;opacity: 0;}
 .pLeft span{position: absolute;left: 0px;top: 0;white-space:nowrap;opacity: 0;}
 
  #content{width:1090px;height:100%;-overflow: hidden;position: relative;margin:0 auto;}
-.wrap{width:100%;height:100%;margin:80px auto 0;text-align: center;position: absolute;top:800px;-display:none;} 
+.wrap{width:100%;height:100%;margin:80px auto 0;text-align: center;position: absolute;top:800px;} 
 -.wrap.show{display:block;}
 -.wrap.hide{display: none;} 
 .pic{width:200px;height:180px;margin:100px auto 40px;border-radius:50%;overflow: hidden;border:5px solid #aee2d9;transform:scale(0);transition:200ms;}
@@ -39,10 +57,4 @@ body{background: url(../img/bg1.jpg) no-repeat;overflow:hidden;}
 
 
 
-
-
-
-#ul{position: absolute;top: 0;left:50px;}
-#ul li{width: 14px; height: 13px; margin: 7px;position: relative;}
-#ul li a{display: block;width: 14px; height: 13px;background:blue;border-radius:50%;}
-#ul li span{position:absolute;left:0;top:0;display:none;} 
+*/

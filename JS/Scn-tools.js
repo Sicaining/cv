@@ -345,6 +345,7 @@ function doMove(obj,json,d,fx,callBack){
 	 	if( t >= d ){
 	 		t = d;
 	 		clearInterval(obj.timer);
+	 		obj.timer = null;
 	 		(typeof callBack === "function") && callBack();
 	 	};
 	 },16);
