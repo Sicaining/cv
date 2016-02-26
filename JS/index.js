@@ -2,11 +2,12 @@
 	var wrap = $('.wrap')[0],wrapCon = $('.wrapCon')[0],active = $('.active'),
 		pic = $('.pic')[0],picImg = $('.img2')[0],cH = view().H;
 	var clientH = view().H;
-		if ( clientH <= 768 ) {
+	clientH = clientH <= 768 ? 768 : clientH;
+		/*if ( clientH <= 768 ) {
 			clientH = 768;
 		}else{
 			clientH = view().H;
-		};
+		};*/
 	active[0].style.height = clientH + 'px';
 		//alert( picImg )
 /*---  背景图自适应窗口 初始化宽高  ---*/
@@ -70,6 +71,7 @@
 			if ( m !== 1 ) {
 				clearInterval( picImg.timerPic );
 				picImg.timerPic = null;
+				m = 1;
 				picImg.style.opacity = 0;
 			};
 			if ( picImg.timerPic2 ) return;
@@ -91,20 +93,19 @@
 	(function(){
 		var n = 0, allonOff = true;
 		mousewheel( window,function (ev){
-				if ( !allonOff ) return;
-				allonOff = false;
-				n-=1;
-				if ( n <= 0 ) {
-					n = 0;
-				};
-				setTimeout( function(){
-					allonOff = true;
-				},1000 );
-				var s = -(n * view().H);
-				console.log( n )
-				doMove( wrapCon,{top:s},666,'easeBothStrong' );
-				//wrapCon.style.top = n * view().H + 'px'
-			console.log( ev,"up" );  //事件对象
+			if ( !allonOff ) return;
+			allonOff = false;
+			n-=1;
+			if ( n <= 0 ) {
+				n = 0;
+				doMove( wrapCon,{top:n},666,'easeBothStrong' );
+			};
+			setTimeout( function(){
+				allonOff = true;
+			},1000 );
+			var s = -(n * view().H);
+			doMove( wrapCon,{top:s},666,'easeBothStrong' );
+		//console.log( ev,"up" );  //事件对象
 		},function (ev){
 			if ( !allonOff ) return;
 			allonOff = false;
@@ -130,39 +131,38 @@
 					allonOff = true;
 				},1000 );
 			};
+			//console.log( ev,"down" );  //事件对象
 		});
 	})();
-
-/*5 > 3 ? alert("5大于3") : alert("5小3...*/
+/*---  左边导航自动生成  ---*/
+	(function (){
+		var cH = view().H
+		var oUl = $('#ul'),html ='';
+		for( var i = 0; i < active.length; i++ ){
+			html += '<li><a href="javascript:;"></a><span></span</li>';
+		};
+		oUl.innerHTML = html;
+		var oUlT = ( cH - parseInt( getStyle(oUl,'height' ) ))/2;
+		oUl.style.top = oUlT + 'px';
+	})();
 
 /*---  窗口改变时 重新赋值 宽高  ---*/
 	window.onresize = function () {
 		var clientH = view().H;
-		if ( clientH <= 768 ) {
-			clientH = 768;
-		}else{
-			clientH = view().H;
-		};
-		console.log( clientH );
+		clientH = clientH <= 768 ? 768 : clientH;
 		document.body.style.backgroundSize = view().W + 'px ' + view().H + 'px';
 		document.body.style.width = view().W + 'px';
 		document.body.style.height = clientH + 'px';
 		wrap.style.height = clientH + 'px';
-		(function ( clientH ){
+		(function (){
 			var oUl = $('#ul');
-			var oUlT = ( clientH - parseInt( getStyle(oUl,'height' ) ))/2;
-			oUl.style.top = oUlT + 'px'
-		})( clientH );
-		for( var i = 0; i < active.length; i++ ){
-			active[i].style.height = clientH + 'px';
-		};
-		console.log(clientH);
+			for( var i = 0; i < active.length; i++ ){
+				active[i].style.height = clientH + 'px';
+			};
+			var oUlT = ( view().H - parseInt( getStyle(oUl,'height' ) ))/2;
+			oUl.style.top = oUlT + 'px';
+		})();
 	};
-	/*---  左边导航  ---*/
-	(function ( cH ){
-		var oUl = $('#ul');
-		var oUlT = ( cH - parseInt( getStyle(oUl,'height' ) ))/2;
-		oUl.style.top = oUlT + 'px'
-	})( cH );
+	
 
 

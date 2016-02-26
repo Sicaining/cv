@@ -36,8 +36,8 @@ p{height:35px;line-height: 35px;}
 
 
 
-#ul{position: absolute;top: 0;left:50px;}
-#ul li{width: 14px; height: 13px; margin: 7px;position: relative;}
+#ul{position: absolute;top: 0;right:100px;overflow: hidden;}
+#ul li{width: 14px; height: 13px; padding: 10px;position: relative;}
 #ul li a{display: block;width: 14px; height: 13px;background:blue;border-radius:50%;}
 #ul li span{position:absolute;left:0;top:0;display:none;}  
 

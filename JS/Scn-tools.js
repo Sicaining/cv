@@ -24,6 +24,7 @@ function $( selector,content ){
 		return content.getElementsByTagName(selector);
 	};
 };
+
 // 获取Css 属性
 function getStyle(obj,attr){   //获取样式
 	if( obj.currentStyle ){
@@ -32,6 +33,7 @@ function getStyle(obj,attr){   //获取样式
 		return getComputedStyle(obj)[attr];
 	}
 };
+
 // 运动函数
 function doMover(obj,attr,speed,target,callBack){    
 //封装函数 设置参数	(控制对象、控制属性、速度、最终值、达到最终值运行的函数)
@@ -52,7 +54,8 @@ function doMover(obj,attr,speed,target,callBack){
 			obj.style[attr] = num + 'px';
 		}
 	},30)
-}
+};
+
 //抖函数
 function shake(obj,attr,speed,callBack){           //抖动
 	if(obj.timer) return;   // 如果定时器还在运行则不执行函数
@@ -75,6 +78,7 @@ function shake(obj,attr,speed,callBack){           //抖动
 		}
 	},30)
 };
+
 // 时间对象
 function futurefun(timeStr){
 	var now = new Date();
@@ -95,6 +99,7 @@ function futurefun(timeStr){
 	};
 	return json;
 };
+
 	// 添加 0
 function addZero( Zero ){
 	if( Zero < 10 ){
@@ -103,6 +108,7 @@ function addZero( Zero ){
 		return ''+Zero;
 	}
 };
+
 // 从数组中找 对应的索引
 function indexOf( arr,searchValue,searchIndex ){
 /* arr 数组名称,searchValue  要找的值或字符串, searchIndex  从索引值为 searchIndex 在arr中开始往后找 */
@@ -117,6 +123,7 @@ function indexOf( arr,searchValue,searchIndex ){
 	};
 	return -1;	//通过循环完成对比后，如果没有找到，那么返回的就是-1；
 };
+
 // 可视区的宽高  view().W  /  view().H
 function view(){
 	return {
@@ -124,10 +131,12 @@ function view(){
 		H:document.documentElement.clientHeight	// 可视区的高度(文档高度)
 	};
 };
+
 // 鼠标滚动的高度 scrollT()
 function scrollT(){
 	return document.body.scrollTop || document.documentElement.scrollTop;
 };
+
 // 鼠标滚动的宽度 scrollL()
 function scrollL(){
 	return document.body.scrollLeft || document.documentElement.scrollLeft;
@@ -141,6 +150,7 @@ function first(element){
 		return firstElement;
 	};
 };
+
 // 获取的是element下的最后一个子节点
 function last(element){
 	var lastElement = element.lastElementChild || element.lastChild;
@@ -150,6 +160,7 @@ function last(element){
 		return lastElement;
 	};
 };
+
 // 下一个兄弟节点
 function next(element){
 	var nextElement = element.nextElementSibling || element.nextSibling;
@@ -159,6 +170,7 @@ function next(element){
 		return nextElement;
 	};
 };
+
 // 上一个兄弟节点
 function prev(element){
 	var prevElement = element.previousElementSibling || element.previousSibling;
@@ -168,6 +180,7 @@ function prev(element){
 		return prevElement;
 	};
 };
+
 // 添加 class
 function addClass( obj,classNames ){
 	if( !obj.className ){  //如果没有class，直接添加
@@ -182,6 +195,7 @@ function addClass( obj,classNames ){
 	};
 	obj.className += " "+classNames;	
 };
+
 //obj的定位父级的偏移量
 function getOffset( obj ){
 	var left = 0, top = 0;
@@ -211,6 +225,7 @@ function getOffset( obj ){
 		top:top-borderTop		// 减去自身的border-top (自身的border不包含在运算中)
 	};
 };
+
 // 碰撞检测
 function collisionTest( obj1,obj2 ){//obj1 拖拽移动的元素,obj2 被碰撞的元素
 
@@ -231,6 +246,7 @@ function collisionTest( obj1,obj2 ){//obj1 拖拽移动的元素,obj2 被碰撞�
 		return true;
 	}
 };
+
 // ajax
 function ajax(options){
 
@@ -294,6 +310,7 @@ function ajax(options){
       xhr.send(defaults.data);
     };
 };
+
 // 时间版运动
 //<script src="JS/tween.js"></script>
 //doMove(oDiv,{left:0,top:200,width:300},1000,"elasticOut");
@@ -350,6 +367,8 @@ function doMove(obj,json,d,fx,callBack){
 	 	};
 	 },16);
 };
+
+//鼠标滚轮事件
 function mousewheel(obj,upFn,downFn){
 	obj.onmousewheel = mousewheelFn
 
